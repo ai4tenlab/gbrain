@@ -53,6 +53,14 @@ Heavy tests run nightly at 08:17 UTC via `.github/workflows/heavy-tests.yml`,
 and on PRs labeled `heavy-tests`. They are NOT part of the default PR CI
 matrix — that gate stays fast.
 
+### Scheduled-workflow maintenance
+
+GitHub can automatically disable scheduled workflows after prolonged repository
+inactivity. A scheduled run does not necessarily reset that inactivity timer.
+If nightly coverage must remain enabled on an otherwise quiet repository, make
+a meaningful repository update before the timer expires, or re-enable the
+workflow from its GitHub Actions page after it is disabled.
+
 ## Failure output convention
 
 Each script writes a per-run log to `~/.gbrain/audit/heavy-<script>-<ts>.log`
